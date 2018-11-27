@@ -1,0 +1,105 @@
+
+				
+body {
+        color: black;
+        background-color:#9ED1F5; 
+        font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+        
+    } 
+#9ED1F5 (azulito)
+#BABAC6(GRIS)
+#ADADBD
+#D0CAD9
+#58ACFA
+    h1 {
+        color:#FF2020 ; 
+        font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif ;
+    }
+
+    h2{
+        color:black; 
+        font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+    }
+ h3{
+        color: #1C65D6; 
+        font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+    }
+   
+
+   h4{
+        color:#1C65D6; 
+        font-family: arial; 
+        font-size: 13pt 
+   }
+h5 {
+        color:#FF5300; #1BD41B
+        font-family: glen bold;
+        font-size: 40px;
+    }
+ 
+
+ .boton {
+ 
+       padding: 5px 10px;
+       font-size: 17px;
+       cursor: pointer;
+       text-align: center;
+       text-decoration: none;
+       outline: none;
+       color: #fff;
+       background-color: #BABAC6;
+       border:0px;
+       border-radius: 10px;
+       box-shadow: 0 9px #999;
+  }
+
+/*Codigo para pasar el mouse por encima del boton*/
+.boton:hover {
+       background-color: #3e8e41
+  }
+
+/*Codigo para darle efecto al darle click al boton*/
+.boton:active  {
+        box-shadow: 0 5px #666;
+        background-color: #3e8e41;
+        transform: translateY(2px);
+ }
+
+
+/*Codigo para TextBox*/
+.tb2 {
+	background-color :white;
+	border: 1px solid #008000; 
+	width: 30px;
+        height: 19px;
+        border-radius:6px;
+ }
+.tb3 {
+	background-color :white;
+	border: 1px solid #008000; 
+	width: 100px;
+        height: 19px;
+        border-radius:6px;
+ }
+
+/*codigo para dropdown box(max y min)*/
+.op{
+      background-color : #99FFCC;
+      width: 50px;
+      height: 29px;
+      border-radius: 3px;
+      border: 1px solid #CCC;
+      font-size: 15px;
+      font-family: Verdana;
+      box-shadow: 1px 1px 5px #CCC;
+}
+.op2{
+      background-color : #99FFCC;
+      width: 110px;
+      height: 29px;
+      border-radius: 3px;
+      border: 1px solid #CCC;
+      font-size: 15px;
+      font-family: Verdana;
+      box-shadow: 1px 1px 5px #CCC;
+}
