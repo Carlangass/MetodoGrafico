@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>M&eacute;todo Gr&aacute;fico</title>
+	 <link rel="stylesheet" href="miestilo.css">
+        <meta charset="UTF-8">
+<Script type = "text/javascript">
+	function damerestricciones(){
+			x = parseInt(document.getElementById("res").value);
+				if(x == 0)
+				{
+					alert("No seas tonto no puede haber ninguna");
+				}
+				else
+				{
+					alert("El numero de restricciones total es de " + x +" mas la de no negatividad");
+					var i = 1;
+					for ( i = 1 ; i < x ; i++)
+					{
+						alert(i);
+					}
+				}
+	}
+	function graficar(){
+			ej1=document.getElementById("lienzo1"); 
+				lienzo1=ej1.getContext("2d");
+				lienzo1.lineWidth=1;
+				lienzo1.strokeStyle = '#000'; 
+			//intentar dibujar
+			
+				var x1 = 0;
+				var x2 = 0;
+				var aux1  = 0;
+				var aux2  = 0;
+				x1 = parseInt(document.getElementById("num1").value);
+				x2 = parseInt(document.getElementById("num2").value);
+				alert ("Los numeros obtenidos son " + x1 + " y " + x2);
+				aux1 = 500 + x1;
+				aux2 = 500 - x2;
+				
+				alert("Las nuevas cordenadas son: " + aux1 + " y " + aux2);
+				lienzo1.beginPath();
+				lienzo1.moveTo(500,aux2);
+				lienzo1.lineTo(aux1,500);
+				lienzo1.stroke();
+				lienzo1.closePath();
+				}
+	function checador(){
+	var x = 0;
+	var e = document.getElementById("valor");
+	x = parseInt(e.options[e.selectedIndex].value);
+	switch (x)
+	{
+	case 1:
+	document.getElementById("espacio").innerHTML = '<input id = "rx1" value = "0" class="tb2" >x <input id = "ry1" value = "0" class="tb2">y <select id="r1maymen" class="op"><option><=</option><option>>=</option></select><input id ="result1" class="tb2"><button type = "button" onclick = "restriccion1()"  class="boton">Calcular</button><br> ' ;
+		break;
+	case 2:
+	document.getElementById("espacio").innerHTML = '<input id = "rx1" value = "0" class="tb2">x <input id = "ry1" value = "0" class="tb2">y <select id="r1maymen" class="op"><option><=</option><option>>=</option></select><input id = "result1" class="tb2"><button type = "button" onclick = "restriccion1()"  class="boton">Calcular</button><br> <input id = "rx2" value = "0" class="tb2">x <input id = "ry2" value = "0" class="tb2">y <select id="r2maymen" class="op"><option><=</option><option>>=</option></select><input id = "result2" class="tb2"><button type = "button" onclick = "restriccion2()" class="boton">Calcular</button><br>' ;
+		break;
+	case 3:
+	document.getElementById("espacio").innerHTML = '<input id = "rx1" value = "0" class="tb2">x <input id = "ry1" value = "0" class="tb2">y <select id="r1maymen" class="op"><option><=</option><option>>=</option></select><input id = "result1" class="tb2"><button type = "button" onclick = "restriccion1()" class="boton">Calcular</button><br> <input id = "rx2" value = "0" class="tb2">x <input id = "ry2" value = "0" class="tb2">y <select id="r2maymen" class="op"><option><=</option><option>>=</option></select><input id = "result2" class="tb2"><button type = "button" onclick = "restriccion2()" class="boton">Calcular</button><br><input id = "rx3" value = "0" class="tb2">x <input id = "ry3" value = "0" class="tb2">y <select id="r3maymen" class="op"><option><=</option><option>>=</option></select><input id ="result3" class="tb2"><button type = "button" onclick = "restriccion3()"  class="boton">Calcular</button><br> ' ;
+	break;
+	case 4:
+	document.getElementById("espacio").innerHTML = '<input id = "rx1" value = "0" class="tb2">x <input id = "ry1" value = "0" class="tb2">y <select id="r1maymen" class="op"><option><=</option><option>>=</option></select><input id = "result1" class="tb2"><button type = "button" onclick = "restriccion1()" class="boton">Calcular</button><br> <input id = "rx2" value = "0" class="tb2">x <input id = "ry2" value = "0" class="tb2">y <select id="r2maymen" class="op"><option><=</option><option>>=</option></select><input id = "result2" class="tb2"><button type = "button" onclick = "restriccion2()" class="boton">Calcular</button><br><input id = "rx3" value = "0" class="tb2">x <input id = "ry3" value = "0" class="tb2">y <select id="r3maymen" class="op"><option><=</option><option>>=</option></select><input id ="result3" class="tb2"><button type = "button" onclick = "restriccion3()" class="boton">Calcular</button><br><input id = "rx4" value = "0" class="tb2">x <input id = "ry4" value = "0" class="tb2">y <select id="r4maymen" class="op"><option><=</option><option>>=</option></select><input id ="result4" class="tb2"><button type = "button" onclick = "restriccion4()" class="boton">Calcular</button><br> ' ;
+	break;
+	case 5:
+	document.getElementById("espacio").innerHTML = '<input id = "rx1" value = "0" class="tb2">x <input id = "ry1" value = "0" class="tb2">y <select id="r1maymen" class="op"><option><=</option><option>>=</option></select><input id = "result1" class="tb2"><button type = "button" onclick = "restriccion1()" class="boton">Calcular</button><br> <input id = "rx2" value = "0" class="tb2">x <input id = "ry2" value = "0" class="tb2">y <select id="r2maymen" class="op"><option><=</option><option>>=</option></select><input id = "result2" class="tb2"><button type = "button" onclick = "restriccion2()" class="boton">Calcular</button><br><input id = "rx3" value = "0" class="tb2">x <input id = "ry3" value = "0" class="tb2">y <select id="r3maymen" class="op"><option><=</option><option>>=</option></select><input id ="result3" class="tb2"><button type = "button" onclick = "restriccion3()" class="boton">Calcular</button><br><input id = "rx4" value = "0" class="tb2">x <input id = "ry4" value = "0" class="tb2">y <select id="r4maymen" class="op"><option><=</option><option>>=</option></select><input id ="result4" class="tb2"><button type = "button" onclick = "restriccion4()" class="boton">Calcular</button><br><input id = "rx5" value = "0" class="tb2">x <input id = "ry5" value = "0" class="tb2">y <select id="r5maymen" class="op"><option><=</option><option>>=</option></select><input id ="result5" class="tb2"><button type = "button" onclick = "restriccion5()" class="boton">Calcular</button><br> ' ;
+	break
+	}
+	}
+	function restriccion1(){
+	ej1=document.getElementById("lienzo1"); 
+	lienzo1=ej1.getContext("2d");
+	lienzo1.lineWidth=1;
+	lienzo1.strokeStyle = 'black'; 
+	var x1=0,x2 = 0 , xyz = 0 , tot =0;
+	var aux1 = 0 , aux2 = 0;
+	x1 = parseInt(document.getElementById("rx1").value);
+	x2 = parseInt(document.getElementById("ry1").value);
+	xyz = parseInt(document.getElementById("result1").value);
+	aux1 = 0 + (10*(xyz/x1));
+	aux2 = 500 - (10*(xyz/x2));
+	lienzo1.beginPath();
+	lienzo1.moveTo(0,aux2);
+	lienzo1.lineTo(aux1,500);
+	lienzo1.stroke();
+	lienzo1.closePath();
+	document.getElementById("coordenadas").innerHTML = "Las coordenadas de la restricci&oacute;n 1 son: " + (xyz/x1) + "x & " + (xyz/x2) + "y Representadas por la Recta Negra"; 
+	var e = document.getElementById("r1maymen");
+	var f = e.options[e.selectedIndex].value;
+	
+	
+	}
+	function restriccion2(){
+	var cor = document.getElementById("coordenadas").innerHTML;
+	ej1=document.getElementById("lienzo1"); 
+	lienzo1=ej1.getContext("2d");
+	lienzo1.lineWidth=1;
+	lienzo1.strokeStyle = 'blue'; 
+	var x1=0,x2 = 0 , xyz = 0 , tot =0;
+	var aux1 = 0 , aux2 = 0;
+	x1 = parseInt(document.getElementById("rx2").value);
+	x2 = parseInt(document.getElementById("ry2").value);
+	xyz = parseInt(document.getElementById("result2").value);
+	aux1 = 0 + (10*(xyz/x1));
+	aux2 = 500 - (10*(xyz/x2));
+	lienzo1.beginPath();
+	lienzo1.moveTo(0,aux2);
+	lienzo1.lineTo(aux1,500);
+	lienzo1.stroke();
+	lienzo1.closePath();
+	cor = cor + "<br>Las coordenadas de la restricci&oacute;n 2 son: " + (xyz/x1) + "x & " + (xyz/x2) + "y Representadas por la Recta Azul";
+	document.getElementById("coordenadas").innerHTML = cor;
+	var e = document.getElementById("r2maymen");
+	var f = e.options[e.selectedIndex].value;
+	
+	
+	}
+	function restriccion3()
+	{
+	var cor = document.getElementById("coordenadas").innerHTML;
+	ej1=document.getElementById("lienzo1"); 
+	lienzo1=ej1.getContext("2d");
+	lienzo1.lineWidth=1;
+	lienzo1.strokeStyle = 'green'; 
+	var x1=0,x2 = 0 , xyz = 0 , tot =0;
+	var aux1 = 0 , aux2 = 0;
+	x1 = parseInt(document.getElementById("rx3").value);
+	x2 = parseInt(document.getElementById("ry3").value);
+	xyz = parseInt(document.getElementById("result2").value);
+	aux1 = 0 + (10*(xyz/x1));
+	aux2 = 500 - (10*(xyz/x2));
+	lienzo1.beginPath();
+	lienzo1.moveTo(0,aux2);
+	lienzo1.lineTo(aux1,500);
+	lienzo1.stroke();
+	lienzo1.closePath();
+	cor = cor + "<br>Las coordenadas de la restricci&oacute;n 3 son: " + (xyz/x1) + "x & " + (xyz/x2) + "y Representadas por la Recta Verde";
+	document.getElementById("coordenadas").innerHTML = cor;
+	var e = document.getElementById("r3maymen");
+	var f = e.options[e.selectedIndex].value;
+	
+	}
+	function restriccion4(){
+	var cor = document.getElementById("coordenadas").innerHTML;
+	ej1=document.getElementById("lienzo1"); 
+	lienzo1=ej1.getContext("2d");
+	lienzo1.lineWidth=1;
+	lienzo1.strokeStyle = 'red'; 
+	var x1=0,x2 = 0 , xyz = 0 , tot =0;
+	var aux1 = 0 , aux2 = 0;
+	x1 = parseInt(document.getElementById("rx4").value);
+	x2 = parseInt(document.getElementById("ry4").value);
+	xyz = parseInt(document.getElementById("result4").value);
+	aux1 = 0 + (10*(xyz/x1));
+	aux2 = 500 - (10*(xyz/x2));
+	lienzo1.beginPath();
+	lienzo1.moveTo(0,aux2);
+	lienzo1.lineTo(aux1,500);
+	lienzo1.stroke();
+	lienzo1.closePath();
+	cor = cor + "<br>Las coordenadas de la restricci&oacute;n 4 son: " + (xyz/x1) + "x & " + (xyz/x2) + "y Representadas por la Recta Roja"
+	document.getElementById("coordenadas").innerHTML = cor;
+		var e = document.getElementById("r1maymen");
+	var f = e.options[e.selectedIndex].value;
+	
+	}
+	function restriccion5(){
+	var cor = document.getElementById("coordenadas").innerHTML;
+	ej1=document.getElementById("lienzo1"); 
+	lienzo1=ej1.getContext("2d");
+	lienzo1.lineWidth=1;
+	lienzo1.strokeStyle = 'yellow'; 
+	var x1=0,x2 = 0 , xyz = 0 , tot =0;
+	var aux1 = 0 , aux2 = 0;
+	x1 = parseInt(document.getElementById("rx5").value);
+	x2 = parseInt(document.getElementById("ry5").value);
+	xyz = parseInt(document.getElementById("result5").value);
+	aux1 = 0 + (10*(xyz/x1));
+	aux2 = 500 - (10*(xyz/x2));
+
+	lienzo1.beginPath();
+	lienzo1.moveTo(0,aux2);
+	lienzo1.lineTo(aux1,500);
+	lienzo1.stroke();
+	lienzo1.closePath();
+	cor = cor + "<br>Las coordenadas de la restricci&oacute;n 5 son: " + (xyz/x1) + "x & " + (xyz/x2) + "y Representadas por la Recta Amarilla"
+	document.getElementById("coordenadas").innerHTML = cor;
+	
+	}
+	function limpiar(){
+	document.getElementById("coordenadas").innerHTML = "";
+	var oCanvas = document.getElementById("lienzo1");
+	var oContext = oCanvas.getContext("2d");
+	oContext.save();
+	oContext.fillStyle = "#FFF";
+	oContext.fillRect(1, 1, 1000, 1000);
+	oContext.restore();
+	lienzo1.beginPath(); 
+	lienzo1.moveTo(500,0); 
+	lienzo1.lineTo(500,1000);
+	lienzo1.stroke(); 
+	lienzo1.closePath(); 
+	lienzo1.beginPath(); 
+	lienzo1.moveTo(0,500);
+	lienzo1.lineTo(1000,500);
+	lienzo1.stroke();
+	lienzo1.closePath();
+	}
+	function desFuncZ()
+	{
+	var x1 = parseInt(document.getElementById("variablez1").value);
+	var x2 = parseInt(document.getElementById("variablez2").value);
+	var e = document.getElementById("funcionz");
+	var f = e.options[e.selectedIndex].value;
+	alert (f + "Z=" + x1 + " X1 + " +  x2 + " X2");
+	}
+	function isocuanta()
+	{
+	var opt = parseInt(document.getElementById("valiso").value);
+	var x1 = parseInt(document.getElementById("variablez1").value);
+	var x2 = parseInt(document.getElementById("variablez2").value);
+	var fun = ((x2*opt)/x1);
+	//fun = (fun*10);
+	var aux1 = 0; //ejex
+	var aux2 = 0; //ejey
+	//aux1 = 500 - (fun);
+	//aux2 = 500 + (10*opt);
+	document.getElementById("isoaux").innerHTML = "La isocuanta se encontrar&aacute; en los puntos: x2=" + opt + "& x1=" + fun + "<br> Disculpa por no graficar pero eso lo dejo a tu criterio ;)" ;
+	}
+	function botoniso(){
+	var strin = 'Ingresa el valor que quieras darle a la isocuanta<br> <input type = "text" id = "valiso" class = "tb2"><br> <button onclick = "isocuanta()" class = "boton">Aceptar</button><br>';
+	document.getElementById("isoaux").innerHTML = strin ;
+	}
+	function puntob(){
+	var a , b , c, d, e, f;
+	var x , y ;
+	a = parseInt(document.getElementById("rx1").value);
+	b = parseInt(document.getElementById("ry1").value);
+	c = parseInt(document.getElementById("rx2").value);
+	d = parseInt(document.getElementById("ry2").value);
+	e = parseInt(document.getElementById("result1").value);
+	f = parseInt(document.getElementById("result2").value);
+	x =((d * e) - (b * f)) / ((a * d) - (b * c));
+	y = ((a * f) - (c * e)) / ((a * d) - (b * c));
+	var aux1 = 500 + (10*x);
+	var aux2 = 500 - (10*y);
+	document.getElementById("pointb").innerHTML = "El Punto B estar&aacute; en las coordenadas: " + x + "x & " + y + "y";
+	}
+	</Script>
+</head>
+<body onload = "checador()" >
+<h5>Investigaci&oacute;n de Operaciones<br> M&eacute;todo Gr&aacute;fico</h5>
+
+<h2>Funci&oacute;n de Z</h2>
+<h2><select id = "funcionz" class="op"><option value= "Max" >Max</option><option value = "Min">Min</option></select>Z = <input value = "0" id = "variablez1" class="tb3">x1 + <input value = "0" id = "variablez2" class="tb3">x2</h2>
+<h3>Cuantas Restricciones tienes?<br></h3>
+<h4> Incluida la de NO negatividad</h4><select id = "valor" onchange = "checador()" class="op">
+  <option value="1" >1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select><button onclick = "limpiar()"  class="boton">Limpiar</button>
+<p id = "espacio">
+<p id = "Operaciones_de"><button onclick = "puntob()"  class="boton">Calcular Punto Optimo</button>
+<p id = "isoaux"></p>
+<p id = "coordenadas"></p>
+<p id = "pointb"></p>
+
+	<div class="dibujo-canvas">
+		<canvas id="lienzo1" width="500" height="500" style="border:1px solid #d3d3d3;" color = "white" ></canvas>
+		<script type="text/javascript">
+			/*ejercicio1();
+			function ejercicio1(){
+				ej1=document.getElementById("lienzo1"); 
+				lienzo1=ej1.getContext("2d");
+				lienzo1.lineWidth=1;
+				lienzo1.strokeStyle = '#000'; 
+			//EJEX
+				lienzo1.beginPath(); 
+				lienzo1.moveTo(500,0);
+				lienzo1.lineTo(500,500);
+				lienzo1.stroke(); 
+				lienzo1.closePath(); 
+			
+			//EJE Y
+				lienzo1.beginPath(); 
+				lienzo1.moveTo(0,500);
+				lienzo1.lineTo(500,500);
+				lienzo1.stroke();
+				lienzo1.closePath();
+			 }*/
+			 document.getElementById("coordenadas").innerHTML = "";
+				var oCanvas = document.getElementById("lienzo1");
+	var oContext = oCanvas.getContext("2d");
+	oContext.save();
+	oContext.fillStyle = "#FFF";
+	oContext.fillRect(1, 1, 1000, 1000);
+	oContext.restore();
+	lienzo1.beginPath(); 
+	lienzo1.moveTo(500,0); 
+	lienzo1.lineTo(500,1000);
+	lienzo1.stroke(); 
+	lienzo1.closePath(); 
+	lienzo1.beginPath(); 
+	lienzo1.moveTo(0,500);
+	lienzo1.lineTo(1000,500);
+	lienzo1.stroke();
+	lienzo1.closePath();
+		</script>
+	</div>
+ </p>
+ <p align = "left">
+
+ </p>
+</body>
+</html>
